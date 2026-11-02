@@ -1,0 +1,29 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('articles', function (Blueprint $table) {
+            $table->id();
+            $table->string('title', 255);
+            $table->string('slug', 255)->unique();
+            $table->longText('content')->nullable();
+            $table->text('excerpt')->nullable();
+            $table->string('image', 255)->nullable();
+            $table->string('author', 100)->nullable();
+            $table->timestamp('published_at')->nullable();
+            $table->boolean('is_published')->default(true);
+            $table->timestamps();
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::dropIfExists('articles');
+    }
+};

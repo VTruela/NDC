@@ -1,0 +1,52 @@
+/* ==========================================================================
+   Category theme: Laundry (Violet / Lavender White / Soft Purple)
+   Soft, fresh vibe
+   ========================================================================== */
+
+.theme-laundry {
+    --primary: #7C3AED;
+    --primary-dark: #6d28d9;
+    --primary-light: #8b5cf6;
+    --secondary: #EDE9FE;
+    --accent: #A78BFA;
+}
+
+.theme-laundry .page-hero {
+    background:
+        linear-gradient(120deg, rgba(167, 139, 250, .24), transparent 55%),
+        linear-gradient(160deg, #ffffff, #f5f3ff);
+    border-bottom-color: #ddd6fe;
+}
+
+.theme-laundry .hero-badge,
+.theme-laundry .badge-soft {
+    background: rgba(124, 58, 237, .12);
+    color: var(--primary);
+}
+
+.theme-laundry .feature-icon,
+.theme-laundry .brand-mark {
+    background: linear-gradient(135deg, #7c3aed, #a78bfa);
+}
+
+.theme-laundry .card {
+    border-color: #ede9fe;
+}
+
+.theme-laundry .card:hover {
+    box-shadow: 0 22px 45px -25px rgba(124, 58, 237, .5);
+}
+
+.theme-laundry .btn-primary {
+    background: linear-gradient(135deg, #7c3aed, #a78bfa);
+}
+
+.theme-laundry .info-box {
+    border-left-color: #a78bfa;
+    background: linear-gradient(180deg, #ffffff, #f5f3ff);
+}
+
+.theme-laundry .filter-pill.is-active {
+    background: #7c3aed;
+    border-color: #7c3aed;
+}

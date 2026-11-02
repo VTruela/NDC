@@ -1,0 +1,53 @@
+/* ==========================================================================
+   Category theme: Institutional (Forest Green / Mint White / Light Green)
+   Fresh, clean vibe
+   ========================================================================== */
+
+.theme-institutional {
+    --primary: #059669;
+    --primary-dark: #047857;
+    --primary-light: #10b981;
+    --secondary: #ECFDF5;
+    --accent: #34D399;
+    --text: #14342a;
+}
+
+.theme-institutional .page-hero {
+    background:
+        linear-gradient(120deg, rgba(52, 211, 153, .22), transparent 55%),
+        linear-gradient(160deg, #ffffff, #ecfdf5);
+    border-bottom-color: #a7f3d0;
+}
+
+.theme-institutional .hero-badge,
+.theme-institutional .badge-soft {
+    background: rgba(5, 150, 105, .12);
+    color: var(--primary);
+}
+
+.theme-institutional .feature-icon,
+.theme-institutional .brand-mark {
+    background: linear-gradient(135deg, #059669, #34d399);
+}
+
+.theme-institutional .card {
+    border-color: #d1fae5;
+}
+
+.theme-institutional .card:hover {
+    box-shadow: 0 22px 45px -25px rgba(5, 150, 105, .5);
+}
+
+.theme-institutional .btn-primary {
+    background: linear-gradient(135deg, #059669, #34d399);
+}
+
+.theme-institutional .info-box {
+    border-left-color: #34d399;
+    background: linear-gradient(180deg, #ffffff, #ecfdf5);
+}
+
+.theme-institutional .filter-pill.is-active {
+    background: #059669;
+    border-color: #059669;
+}
