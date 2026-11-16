@@ -395,6 +395,39 @@ table.data tbody tr:hover { background: #F8FAFC; }
 .field .hint { display: block; margin-top: .35rem; font-size: .76rem; color: var(--muted); }
 .field-error { display: block; margin-top: .35rem; font-size: .78rem; color: #DC2626; }
 
+/* Tombol mata untuk melihat isi kolom password */
+.password-wrap { position: relative; display: block; }
+.password-wrap input { padding-right: 2.9rem; }
+
+.password-toggle {
+    position: absolute;
+    top: 50%;
+    right: .45rem;
+    transform: translateY(-50%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    transition: color .15s ease, background .15s ease;
+}
+
+.password-toggle:hover,
+.password-toggle:focus-visible {
+    color: var(--primary);
+    background: rgba(15, 23, 42, .07);
+    outline: none;
+}
+
+.password-toggle.is-active { color: var(--accent); }
+.password-toggle svg { display: block; width: 18px; height: 18px; }
+
 .image-preview {
     display: block;
     width: 100%;
@@ -598,6 +631,68 @@ table.data tbody tr:hover { background: #F8FAFC; }
     font-size: .82rem;
     color: var(--muted);
 }
+
+/* Text customisation ------------------------------------------------------- */
+.texts-locales {
+    display: flex;
+    align-items: center;
+    gap: .45rem;
+    margin-bottom: .9rem;
+    font-size: .74rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.texts-sections {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem;
+    padding-bottom: 1.25rem;
+    margin-bottom: 1.35rem;
+    border-bottom: 1px solid var(--line);
+}
+
+.texts-tab {
+    display: inline-flex;
+    align-items: center;
+    padding: .38rem .85rem;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: #fff;
+    font-size: .8rem;
+    font-weight: 700;
+    color: var(--muted);
+}
+
+.texts-tab:hover { border-color: var(--primary); color: var(--primary); }
+
+.texts-tab.is-active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+}
+
+.texts-tab.is-active:hover { color: #fff; }
+
+.texts-list { display: grid; gap: 1.1rem; }
+
+.texts-item label { display: flex; align-items: center; flex-wrap: wrap; gap: .5rem; }
+
+.texts-key {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: .7rem;
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--muted);
+    background: #F1F5F9;
+    border-radius: 6px;
+    padding: .1rem .4rem;
+}
+
+.texts-count { font-size: .8rem; font-weight: 600; color: var(--muted); }
 
 /* Pagination --------------------------------------------------------------- */
 .pagination-wrap { margin-top: 1.5rem; }

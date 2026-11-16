@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
 
 /**
@@ -30,14 +31,26 @@ class UserAdminController extends Controller
     {
         $data = $request->validate([
             'name' => ['required', 'string', 'max:100'],
+            'email' => ['required', 'email', 'max:150', Rule::unique('users', 'email')->ignore($user->id)],
             'role' => ['required', Rule::in(array_keys(User::ROLES))],
+            'password' => ['nullable', 'string', 'min:6', 'confirmed'],
         ]);
 
         if ($user->isAdmin() && $data['role'] !== User::ROLE_ADMIN && $this->isLastAdmin($user)) {
             return back()->with('error', __('ui.admin.last_admin_error'));
         }
 
-        $user->update($data);
+        $payload = [
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'role' => $data['role'],
+        ];
+
+        if (! empty($data['password'])) {
+            $payload['password'] = Hash::make($data['password']);
+        }
+
+        $user->update($payload);
 
         return redirect()
             ->route('admin.users.index')

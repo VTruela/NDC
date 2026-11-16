@@ -3,6 +3,9 @@
 return [
 
     'brand' => [
+        'name' => 'Nusa Determinan',
+        'suffix' => 'Cemerlang',
+        'mark' => 'ND',
         'tagline' => 'Trusted Chemical Solutions for Indonesian Industry',
         'description' => 'PT Nusa Determinan Cemerlang manufactures and distributes cleaning, metal finishing, and laundry chemicals for industrial, institutional, and commercial facilities across Indonesia.',
     ],
@@ -269,6 +272,7 @@ return [
         'deleted' => 'Record deleted successfully.',
         'saved' => 'Changes saved successfully.',
         'empty' => 'No records yet.',
+        'record_missing' => 'The record no longer exists.',
 
         'new_product' => 'Add Product',
         'edit_product' => 'Edit Product',
@@ -321,6 +325,25 @@ return [
         'badge_published' => 'Published',
         'badge_draft' => 'Draft',
         'products_in_category' => 'Products in this category',
+
+        'texts' => 'Website Text',
+        'texts_heading' => 'Website Text Customisation',
+        'texts_lead' => 'Edit every text displayed on the website, including menu labels, headings, sentences, and company profile data. Only an administrator can make changes.',
+        'texts_locale' => 'Language',
+        'texts_company_section' => 'Company Profile',
+        'texts_company_note' => 'Company profile data applies to all languages.',
+        'texts_search' => 'Search text',
+        'texts_search_placeholder' => 'Search by key name or text content…',
+        'texts_save' => 'Save Changes',
+        'texts_reset' => 'Reset to default',
+        'texts_reset_confirm' => 'Reset all texts in this section back to their default values?',
+        'texts_default' => 'Default value',
+        'texts_modified' => 'Modified',
+        'texts_saved' => 'Text saved successfully.',
+        'texts_reset_done' => 'Text has been reset to its default value.',
+        'texts_empty' => 'No text in this section yet.',
+        'texts_no_result' => 'No text matches your search.',
+        'texts_count' => ':count texts in this section',
     ],
 
 ];

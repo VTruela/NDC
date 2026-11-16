@@ -15,8 +15,12 @@ class EnsureRole
     {
         $user = $request->user();
 
-        if (! $user || ! $user->hasRole(...$roles)) {
-            abort(403, __('ui.auth.forbidden'));
+        if (! $user) {
+            return redirect()->route('login');
+        }
+
+        if (! $user->hasRole(...$roles)) {
+            return redirect()->route('home');
         }
 
         return $next($request);

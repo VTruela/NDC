@@ -1,10 +1,16 @@
 <header class="site-header" id="siteHeader">
     <div class="container header-inner">
         <a class="brand" href="{{ route('home') }}">
-            <span class="brand-mark">ND</span>
+            @if (config('company.logo') && file_exists(public_path(config('company.logo'))))
+                <img src="{{ asset(config('company.logo')) }}" alt="{{ __('ui.brand.name') }}" style="width:42px;height:42px;border-radius:12px;object-fit:contain;background:#fff">
+            @elseif (trim(__('ui.brand.mark')) !== '')
+                <img src="{{ \App\Support\Media::logoUrl() }}" alt="{{ __('ui.brand.name') }}" style="width:42px;height:42px;border-radius:12px;object-fit:contain">
+            @else
+                <span class="brand-mark">{{ __('ui.brand.mark') }}</span>
+            @endif
             <span class="brand-text">
-                <strong>Nusa Determinan</strong>
-                <small>Cemerlang</small>
+                <strong>{{ __('ui.brand.name') }}</strong>
+                <small>{{ __('ui.brand.suffix') }}</small>
             </span>
         </a>
 
@@ -19,7 +25,13 @@
             <div class="nav-mobile-actions">
                 <a class="btn btn-primary btn-block" href="{{ route('contact.index') }}">{{ __('ui.home.hero_cta') }}</a>
                 @auth
-                    <a class="btn btn-ghost btn-block" href="{{ route('admin.dashboard') }}">{{ __('ui.nav.admin') }}</a>
+                    @if (auth()->user()->isAdmin())
+                        <a class="btn btn-ghost btn-block" href="{{ route('admin.dashboard') }}">{{ __('ui.nav.admin') }}</a>
+                    @endif
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button class="btn btn-ghost btn-block" type="submit">{{ __('ui.admin.logout') }}</button>
+                    </form>
                 @else
                     <a class="btn btn-ghost btn-block" href="{{ route('login') }}">{{ __('ui.auth.login') }}</a>
                 @endauth
@@ -32,7 +44,15 @@
                 <a class="{{ app()->getLocale() === 'en' ? 'is-active' : '' }}" href="{{ route('lang.switch', 'en') }}">EN</a>
             </div>
             @auth
-                <a class="nav-link header-login" href="{{ route('admin.dashboard') }}">{{ __('ui.nav.admin') }}</a>
+                @if (auth()->user()->isAdmin())
+                    <a class="nav-link header-login" href="{{ route('admin.dashboard') }}">{{ __('ui.nav.admin') }}</a>
+                @endif
+                <form method="POST" action="{{ route('logout') }}" style="display:inline">
+                    @csrf
+                    <button class="nav-link header-login" type="submit" style="background:none;border:none;cursor:pointer;font:inherit;padding:0">
+                        {{ __('ui.admin.logout') }}
+                    </button>
+                </form>
             @else
                 <a class="nav-link header-login" href="{{ route('login') }}">{{ __('ui.auth.login') }}</a>
             @endauth

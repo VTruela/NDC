@@ -4,10 +4,10 @@
     <div class="container footer-grid">
         <div class="footer-col footer-about">
             <a class="brand brand-light" href="{{ route('home') }}">
-                <span class="brand-mark">ND</span>
+                <img src="{{ \App\Support\Media::logoUrl() }}" alt="{{ __('ui.brand.name') }}" style="width:42px;height:42px;border-radius:12px;object-fit:contain">
                 <span class="brand-text">
-                    <strong>Nusa Determinan</strong>
-                    <small>Cemerlang</small>
+                    <strong>{{ __('ui.brand.name') }}</strong>
+                    <small>{{ __('ui.brand.suffix') }}</small>
                 </span>
             </a>
             <p>{{ __('ui.brand.description') }}</p>

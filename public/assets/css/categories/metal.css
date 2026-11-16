@@ -1,0 +1,52 @@
+/* ==========================================================================
+   Category theme: Metal Finishing (Steel Gray / Steel Blue / Silver)
+   Industrial, metallic vibe
+   ========================================================================== */
+
+.theme-metal {
+    --primary: #374151;
+    --primary-dark: #1f2937;
+    --primary-light: #4b5563;
+    --secondary: #1E3A5F;
+    --accent: #94A3B8;
+}
+
+.theme-metal .page-hero {
+    background:
+        linear-gradient(120deg, rgba(148, 163, 184, .22), transparent 55%),
+        linear-gradient(160deg, #f1f5f9, #e2e8f0);
+    border-bottom-color: #cbd5e1;
+}
+
+.theme-metal .hero-badge,
+.theme-metal .badge-soft {
+    background: rgba(55, 65, 81, .1);
+    color: var(--primary);
+}
+
+.theme-metal .feature-icon,
+.theme-metal .brand-mark {
+    background: linear-gradient(135deg, #374151, #94a3b8);
+}
+
+.theme-metal .card {
+    border-color: #d7dee7;
+}
+
+.theme-metal .card:hover {
+    box-shadow: 0 22px 45px -25px rgba(55, 65, 81, .55);
+}
+
+.theme-metal .btn-primary {
+    background: linear-gradient(135deg, #374151, #64748b);
+}
+
+.theme-metal .info-box {
+    border-left-color: #94a3b8;
+    background: linear-gradient(180deg, #ffffff, #f1f5f9);
+}
+
+.theme-metal .filter-pill.is-active {
+    background: #374151;
+    border-color: #374151;
+}

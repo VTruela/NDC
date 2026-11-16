@@ -3,6 +3,9 @@
 return [
 
     'brand' => [
+        'name' => 'Nusa Determinan',
+        'suffix' => 'Cemerlang',
+        'mark' => 'ND',
         'tagline' => 'Solusi Kimia Terpercaya untuk Industri Indonesia',
         'description' => 'PT Nusa Determinan Cemerlang memproduksi dan mendistribusikan bahan kimia pembersih, metal finishing, serta laundry untuk industri, institusi, dan fasilitas komersial di seluruh Indonesia.',
     ],
@@ -269,6 +272,7 @@ return [
         'deleted' => 'Data berhasil dihapus.',
         'saved' => 'Perubahan berhasil disimpan.',
         'empty' => 'Belum ada data.',
+        'record_missing' => 'Data sudah tidak ada.',
 
         'new_product' => 'Tambah Produk',
         'edit_product' => 'Ubah Produk',
@@ -321,6 +325,25 @@ return [
         'badge_published' => 'Terbit',
         'badge_draft' => 'Draf',
         'products_in_category' => 'Produk pada kategori ini',
+
+        'texts' => 'Teks Website',
+        'texts_heading' => 'Kustomisasi Teks Website',
+        'texts_lead' => 'Ubah seluruh teks yang tampil di website, termasuk label menu, judul, kalimat, dan data profil perusahaan. Perubahan hanya dapat dilakukan oleh administrator.',
+        'texts_locale' => 'Bahasa',
+        'texts_company_section' => 'Profil Perusahaan',
+        'texts_company_note' => 'Data profil perusahaan berlaku untuk semua bahasa.',
+        'texts_search' => 'Cari teks',
+        'texts_search_placeholder' => 'Cari berdasarkan nama kunci atau isi teks…',
+        'texts_save' => 'Simpan Perubahan',
+        'texts_reset' => 'Kembalikan default',
+        'texts_reset_confirm' => 'Kembalikan semua teks pada bagian ini ke nilai default?',
+        'texts_default' => 'Nilai default',
+        'texts_modified' => 'Diubah',
+        'texts_saved' => 'Teks berhasil disimpan.',
+        'texts_reset_done' => 'Teks dikembalikan ke nilai default.',
+        'texts_empty' => 'Belum ada teks pada bagian ini.',
+        'texts_no_result' => 'Tidak ada teks yang cocok dengan pencarian.',
+        'texts_count' => ':count teks pada bagian ini',
     ],
 
 ];

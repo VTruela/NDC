@@ -17,10 +17,10 @@
             </div>
 
             <div class="hero-visual">
-                <img src="{{ \App\Support\Media::placeholder('modern chemical manufacturing plant interior, stainless steel tanks, clean bright industrial photography', 'landscape_4_3') }}"
+                <img src="{{ \App\Support\Media::heroUrl() }}"
                      alt="{{ config('company.name') }}">
                 <div class="hero-card">
-                    <strong>{{ date('Y') - config('company.founded') }}+</strong>
+                    <strong>{{ date('Y') - (int) config('company.founded', 2011) }}+</strong>
                     <span>{{ __('ui.home.stat_years') }}</span>
                 </div>
             </div>
@@ -31,19 +31,19 @@
         <div class="container">
             <div class="grid grid-4">
                 <div class="stat">
-                    <strong>{{ date('Y') - config('company.founded') }}+</strong>
+                    <strong>{{ date('Y') - (int) config('company.founded', 2011) }}+</strong>
                     <span>{{ __('ui.home.stat_years') }}</span>
                 </div>
                 <div class="stat">
-                    <strong>320+</strong>
+                    <strong>{{ config('company.stat_clients', '320+') }}</strong>
                     <span>{{ __('ui.home.stat_clients') }}</span>
                 </div>
                 <div class="stat">
-                    <strong>{{ \App\Models\Product::count() }}+</strong>
+                    <strong>{{ \App\Models\Product::count() }}</strong>
                     <span>{{ __('ui.home.stat_products') }}</span>
                 </div>
                 <div class="stat">
-                    <strong>24</strong>
+                    <strong>{{ config('company.stat_cities', '24') }}</strong>
                     <span>{{ __('ui.home.stat_cities') }}</span>
                 </div>
             </div>
@@ -122,6 +122,10 @@
                         @include('partials.article-card', ['article' => $article])
                     @endforeach
                 </div>
+
+                <div class="text-center mt-lg">
+                    <a class="btn btn-outline" href="{{ route('articles.index') }}">{{ __('ui.common.view_all') }}</a>
+                </div>
             </div>
         </section>
     @endif
@@ -139,6 +143,10 @@
                     @foreach ($testimonials as $testimonial)
                         @include('partials.testimonial-card', ['testimonial' => $testimonial])
                     @endforeach
+                </div>
+
+                <div class="text-center mt-lg">
+                    <a class="btn btn-outline" href="{{ route('testimonials.index') }}">{{ __('ui.common.view_all') }}</a>
                 </div>
             </div>
         </section>

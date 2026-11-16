@@ -25,7 +25,7 @@
                 <p>{{ __('ui.about.story_2') }}</p>
             </div>
             <div class="detail-media">
-                <img src="{{ \App\Support\Media::placeholder('chemical plant quality control laboratory, technician with safety glasses, bright modern photography', 'landscape_4_3') }}"
+                <img src="{{ \App\Support\Media::aboutUrl() }}"
                      alt="{{ config('company.name') }}">
             </div>
         </div>

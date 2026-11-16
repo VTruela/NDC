@@ -17,10 +17,10 @@
     <div class="admin-shell">
         <aside class="admin-sidebar" id="adminSidebar">
             <a class="admin-brand" href="{{ route('admin.dashboard') }}">
-                <span class="mark">ND</span>
+                <img src="{{ \App\Support\Media::logoUrl() }}" alt="Logo" style="width:38px;height:38px;border-radius:10px;object-fit:contain">
                 <span>
                     <strong>{{ __('ui.admin.title') }}</strong>
-                    <small>Nusa Determinan</small>
+                    <small>{{ __('ui.brand.name') }}</small>
                 </span>
             </a>
 
@@ -44,6 +44,10 @@
                         <a class="admin-nav-link {{ request()->routeIs('admin.users.*') ? 'is-active' : '' }}"
                            href="{{ route('admin.users.index') }}">
                             {{ __('ui.admin.users') }}
+                        </a>
+                        <a class="admin-nav-link {{ request()->routeIs('admin.texts.*') ? 'is-active' : '' }}"
+                           href="{{ route('admin.texts.index') }}">
+                            {{ __('ui.admin.texts') }}
                         </a>
                     @endif
                 </div>
@@ -90,10 +94,9 @@
                     <a class="btn btn-outline btn-sm" href="{{ route('home') }}" target="_blank" rel="noopener">
                         {{ __('ui.admin.back_to_site') }}
                     </a>
-                    <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-                        <button class="btn btn-sm" type="submit">{{ __('ui.admin.logout') }}</button>
-                    </form>
+                    <a class="btn btn-sm" href="{{ route('home') }}">
+                        {{ __('ui.admin.logout') }}
+                    </a>
                 </div>
             </header>
 
@@ -118,5 +121,6 @@
     </div>
 
     <script src="{{ asset('assets/js/admin.js') }}" defer></script>
+    <script src="{{ asset('assets/js/password-toggle.js') }}" defer></script>
 </body>
 </html>

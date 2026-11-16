@@ -1,13 +1,16 @@
-<div class="testimonial reveal">
-    <div class="stars" aria-label="{{ $testimonial->rating }} / 5">
-        {{ str_repeat('★', $testimonial->rating) }}{{ str_repeat('☆', 5 - $testimonial->rating) }}
+@php($item = $testimonial ?? $t ?? null)
+@if ($item)
+<article class="testimonial reveal">
+    <div class="stars" aria-label="{{ $item->rating }} / 5">
+        {{ str_repeat('★', (int) $item->rating) }}{{ str_repeat('☆', max(0, 5 - (int) $item->rating)) }}
     </div>
-    <blockquote>&ldquo;{{ $testimonial->content }}&rdquo;</blockquote>
+    <blockquote>“{{ $item->content }}”</blockquote>
     <div class="testimonial-author">
-        <img src="{{ $testimonial->image_url }}" alt="{{ $testimonial->name }}" loading="lazy">
+        <img src="{{ $item->image_url }}" alt="{{ $item->name }}" loading="lazy">
         <div>
-            <strong>{{ $testimonial->name }}</strong>
-            <span>{{ $testimonial->company }}</span>
+            <strong>{{ $item->name }}</strong>
+            <span>{{ $item->company }}</span>
         </div>
     </div>
-</div>
+</article>
+@endif

@@ -14,7 +14,9 @@ class RegisterController extends Controller
     public function show(): View|RedirectResponse
     {
         if (Auth::check()) {
-            return redirect()->route('admin.dashboard');
+            return Auth::user()->isAdmin()
+                ? redirect()->route('admin.dashboard')
+                : redirect()->route('home');
         }
 
         return view('auth.register', [
@@ -42,7 +44,7 @@ class RegisterController extends Controller
         $request->session()->regenerate();
 
         return redirect()
-            ->route('admin.dashboard')
+            ->route('home')
             ->with('success', __('ui.auth.registered'));
     }
 }

@@ -25,7 +25,8 @@
 
                     <div class="field">
                         <label for="email">{{ __('ui.admin.field_email') }}</label>
-                        <input id="email" type="email" value="{{ $user->email }}" readonly>
+                        <input id="email" type="email" name="email" value="{{ old('email', $user->email) }}" required>
+                        @error('email')<span class="field-error">{{ $message }}</span>@enderror
                     </div>
                 </div>
 
@@ -40,6 +41,19 @@
                     </select>
                     <span class="hint">{{ __('ui.admin.field_role_hint') }}</span>
                     @error('role')<span class="field-error">{{ $message }}</span>@enderror
+                </div>
+
+                <div class="form-row">
+                    <div class="field">
+                        <label for="password">{{ __('ui.admin.password') }} Baru ({{ __('ui.common.optional') }})</label>
+                        <input id="password" type="password" name="password" placeholder="Kosongkan jika tidak ingin mengganti password">
+                        @error('password')<span class="field-error">{{ $message }}</span>@enderror
+                    </div>
+
+                    <div class="field">
+                        <label for="password_confirmation">{{ __('ui.auth.password_confirm') }}</label>
+                        <input id="password_confirmation" type="password" name="password_confirmation" placeholder="Ulangi password baru">
+                    </div>
                 </div>
 
                 <div class="form-actions">

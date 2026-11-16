@@ -2,17 +2,17 @@
 
 return [
 
-    /*
-    |--------------------------------------------------------------------------
-    | Company Profile
-    |--------------------------------------------------------------------------
-    | Data statis perusahaan yang dipakai di seluruh halaman publik.
-    */
-
     'name' => 'PT Nusa Determinan Cemerlang',
     'short_name' => 'Nusa Determinan',
     'brand' => 'Nusa Determinan Cemerlang',
     'founded' => 2011,
+
+    'logo' => '',
+    'hero_image' => '',
+    'about_image' => '',
+
+    'stat_clients' => '320+',
+    'stat_cities' => '24',
 
     'address' => 'Kawasan Industri Pulogadung, Jl. Industri Raya No. 12, Jakarta Timur 13920, Indonesia',
     'phone' => '+62 21 4682 7700',
@@ -31,13 +31,6 @@ return [
         'youtube' => 'https://www.youtube.com',
     ],
 
-    /*
-    |--------------------------------------------------------------------------
-    | Akun Tamu (Guest)
-    |--------------------------------------------------------------------------
-    | Akun bersama yang dipakai saat pengunjung memilih "Masuk sebagai Tamu".
-    | Akun ini hanya dapat melihat data (read-only).
-    */
     'guest_email' => 'guest@nusadeterminan.co.id',
 
 ];

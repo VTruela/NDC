@@ -14,7 +14,7 @@
 <body class="login-page">
     <div class="login-card login-card--wide">
         <div class="admin-brand">
-            <span class="mark">ND</span>
+            <span class="mark">{{ __('ui.brand.mark') }}</span>
             <span>
                 <strong>{{ __('ui.auth.register_title') }}</strong>
                 <small>{{ config('company.short_name') }}</small>
@@ -78,5 +78,7 @@
             <a href="{{ route('home') }}">{{ __('ui.auth.back_home') }}</a>
         </div>
     </div>
+
+    <script src="{{ asset('assets/js/password-toggle.js') }}" defer></script>
 </body>
 </html>

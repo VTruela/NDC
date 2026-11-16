@@ -14,7 +14,9 @@ class LoginController extends Controller
     public function show(): View|RedirectResponse
     {
         if (Auth::check()) {
-            return redirect()->route('admin.dashboard');
+            return Auth::user()->isAdmin()
+                ? redirect()->route('admin.dashboard')
+                : redirect()->route('home');
         }
 
         return view('auth.login', [
@@ -37,7 +39,11 @@ class LoginController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(route('admin.dashboard'));
+        if (Auth::user()->isAdmin()) {
+            return redirect()->intended(route('admin.dashboard'));
+        }
+
+        return redirect()->route('home');
     }
 
     /**
@@ -57,7 +63,7 @@ class LoginController extends Controller
         Auth::login($guest);
         $request->session()->regenerate();
 
-        return redirect()->route('admin.dashboard');
+        return redirect()->route('home');
     }
 
     public function logout(Request $request): RedirectResponse
@@ -66,6 +72,6 @@ class LoginController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect()->route('home');
+        return redirect()->route('login');
     }
 }
