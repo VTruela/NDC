@@ -1,53 +1,87 @@
 /* ==========================================================================
-   Category theme: Institutional (Forest Green / Mint White / Light Green)
-   Fresh, clean vibe
+   Category theme: Institutional (Dominant Forest Emerald Green)
+   Dominant solid background hero with bright white typography
    ========================================================================== */
 
 .theme-institutional {
     --primary: #059669;
-    --primary-dark: #047857;
-    --primary-light: #10b981;
-    --secondary: #ECFDF5;
+    --primary-dark: #064E3B;
+    --primary-light: #10B981;
+    --secondary: #10B981;
     --accent: #34D399;
-    --text: #14342a;
 }
 
 .theme-institutional .page-hero {
     background:
-        linear-gradient(120deg, rgba(52, 211, 153, .22), transparent 55%),
-        linear-gradient(160deg, #ffffff, #ecfdf5);
-    border-bottom-color: #a7f3d0;
+        radial-gradient(600px 300px at 88% 15%, rgba(167, 243, 208, .22), transparent 65%),
+        linear-gradient(135deg, #064E3B 0%, #047857 52%, #059669 100%);
+    color: #ffffff;
+    border-bottom: none;
+}
+
+.theme-institutional .page-hero h1 {
+    color: #ffffff;
+}
+
+.theme-institutional .page-hero .lead {
+    color: rgba(255, 255, 255, .92);
+}
+
+.theme-institutional .page-hero .breadcrumb,
+.theme-institutional .page-hero .breadcrumb a {
+    color: #ffffff;
+}
+
+.theme-institutional .page-hero .breadcrumb span.sep {
+    color: rgba(255, 255, 255, .6);
+}
+
+.theme-institutional .page-hero .kicker,
+.theme-institutional .page-hero .badge-soft {
+    background: rgba(255, 255, 255, .18);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, .35);
+}
+
+.theme-institutional .page-hero .kicker::before {
+    background: #6EE7B7;
 }
 
 .theme-institutional .hero-badge,
-.theme-institutional .badge-soft {
+.theme-institutional .card-body .badge-soft,
+.theme-institutional .price-note .badge-soft {
     background: rgba(5, 150, 105, .12);
     color: var(--primary);
 }
 
 .theme-institutional .feature-icon,
-.theme-institutional .brand-mark {
-    background: linear-gradient(135deg, #059669, #34d399);
+.theme-institutional .brand-mark,
+.theme-institutional .brand-logo-wrap {
+    background: linear-gradient(135deg, #047857, #10B981);
 }
 
 .theme-institutional .card {
-    border-color: #d1fae5;
+    border-color: #D1FAE5;
 }
 
 .theme-institutional .card:hover {
-    box-shadow: 0 22px 45px -25px rgba(5, 150, 105, .5);
+    box-shadow: 0 22px 45px -25px rgba(5, 150, 105, .45);
+    border-color: #10B981;
 }
 
-.theme-institutional .btn-primary {
-    background: linear-gradient(135deg, #059669, #34d399);
+.theme-institutional .btn-primary,
+.theme-institutional .nav-link.is-active,
+.theme-institutional .lang-switch a.is-active {
+    background: linear-gradient(135deg, #047857, #10B981);
 }
 
 .theme-institutional .info-box {
-    border-left-color: #34d399;
-    background: linear-gradient(180deg, #ffffff, #ecfdf5);
+    border-left-color: #059669;
+    background: #ECFDF5;
 }
 
 .theme-institutional .filter-pill.is-active {
     background: #059669;
     border-color: #059669;
+    color: #ffffff;
 }

@@ -23,8 +23,8 @@ return Application::configure(basePath: dirname(__DIR__))
             'role' => EnsureRole::class,
         ]);
 
-        $middleware->redirectGuestsTo(fn () => route('login'));
-        $middleware->redirectUsersTo('/admin');
+        $middleware->redirectGuestsTo(fn () => route('home'));
+        $middleware->redirectUsersTo('/');
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

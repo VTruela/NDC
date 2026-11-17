@@ -1,6 +1,7 @@
 @php($item = $testimonial ?? $t ?? null)
 @if ($item)
-<article class="testimonial reveal">
+<article class="testimonial tilt-card reveal">
+    <div class="testimonial-quote-mark" aria-hidden="true">“</div>
     <div class="stars" aria-label="{{ $item->rating }} / 5">
         {{ str_repeat('★', (int) $item->rating) }}{{ str_repeat('☆', max(0, 5 - (int) $item->rating)) }}
     </div>

@@ -33,23 +33,17 @@
                        href="{{ route('admin.dashboard') }}">
                         {{ __('ui.admin.dashboard') }}
                     </a>
-                    @if ($me->isAdmin())
-                        <a class="admin-nav-link {{ request()->routeIs('admin.contacts.*') ? 'is-active' : '' }}"
-                           href="{{ route('admin.contacts.index') }}">
-                            {{ __('ui.admin.contacts') }}
-                            @if ($unread > 0)
-                                <span class="count">{{ $unread }}</span>
-                            @endif
-                        </a>
-                        <a class="admin-nav-link {{ request()->routeIs('admin.users.*') ? 'is-active' : '' }}"
-                           href="{{ route('admin.users.index') }}">
-                            {{ __('ui.admin.users') }}
-                        </a>
-                        <a class="admin-nav-link {{ request()->routeIs('admin.texts.*') ? 'is-active' : '' }}"
-                           href="{{ route('admin.texts.index') }}">
-                            {{ __('ui.admin.texts') }}
-                        </a>
-                    @endif
+                    <a class="admin-nav-link {{ request()->routeIs('admin.contacts.*') ? 'is-active' : '' }}"
+                       href="{{ route('admin.contacts.index') }}">
+                        {{ __('ui.admin.contacts') }}
+                        @if ($unread > 0)
+                            <span class="count">{{ $unread }}</span>
+                        @endif
+                    </a>
+                    <a class="admin-nav-link {{ request()->routeIs('admin.texts.*') ? 'is-active' : '' }}"
+                       href="{{ route('admin.texts.index') }}">
+                        {{ __('ui.admin.texts') }}
+                    </a>
                 </div>
 
                 <div class="admin-nav-group">
@@ -73,11 +67,13 @@
                 </div>
             </nav>
 
-            <div class="admin-user">
-                <strong>{{ $me->name }}</strong>
-                <span>{{ $me->email }}</span>
-                <span class="admin-role">{{ $me->roleLabel() }}</span>
-            </div>
+            @if ($me)
+                <div class="admin-user">
+                    <strong>{{ $me->name }}</strong>
+                    <span>{{ $me->email }}</span>
+                    <span class="admin-role">{{ $me->roleLabel() }}</span>
+                </div>
+            @endif
         </aside>
 
         <div class="admin-main">

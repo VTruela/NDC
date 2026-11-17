@@ -1,52 +1,87 @@
 /* ==========================================================================
-   Category theme: Laundry (Violet / Lavender White / Soft Purple)
-   Soft, fresh vibe
+   Category theme: Laundry (Dominant Deep Royal Violet)
+   Dominant solid background hero with bright white typography
    ========================================================================== */
 
 .theme-laundry {
-    --primary: #7C3AED;
-    --primary-dark: #6d28d9;
-    --primary-light: #8b5cf6;
-    --secondary: #EDE9FE;
-    --accent: #A78BFA;
+    --primary: #6D28D9;
+    --primary-dark: #3B0764;
+    --primary-light: #7C3AED;
+    --secondary: #8B5CF6;
+    --accent: #C4B5FD;
 }
 
 .theme-laundry .page-hero {
     background:
-        linear-gradient(120deg, rgba(167, 139, 250, .24), transparent 55%),
-        linear-gradient(160deg, #ffffff, #f5f3ff);
-    border-bottom-color: #ddd6fe;
+        radial-gradient(600px 300px at 88% 15%, rgba(216, 180, 254, .24), transparent 65%),
+        linear-gradient(135deg, #3B0764 0%, #5B21B6 52%, #7C3AED 100%);
+    color: #ffffff;
+    border-bottom: none;
+}
+
+.theme-laundry .page-hero h1 {
+    color: #ffffff;
+}
+
+.theme-laundry .page-hero .lead {
+    color: rgba(255, 255, 255, .92);
+}
+
+.theme-laundry .page-hero .breadcrumb,
+.theme-laundry .page-hero .breadcrumb a {
+    color: #ffffff;
+}
+
+.theme-laundry .page-hero .breadcrumb span.sep {
+    color: rgba(255, 255, 255, .6);
+}
+
+.theme-laundry .page-hero .kicker,
+.theme-laundry .page-hero .badge-soft {
+    background: rgba(255, 255, 255, .18);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, .35);
+}
+
+.theme-laundry .page-hero .kicker::before {
+    background: #DDD6FE;
 }
 
 .theme-laundry .hero-badge,
-.theme-laundry .badge-soft {
-    background: rgba(124, 58, 237, .12);
+.theme-laundry .card-body .badge-soft,
+.theme-laundry .price-note .badge-soft {
+    background: rgba(109, 40, 217, .12);
     color: var(--primary);
 }
 
 .theme-laundry .feature-icon,
-.theme-laundry .brand-mark {
-    background: linear-gradient(135deg, #7c3aed, #a78bfa);
+.theme-laundry .brand-mark,
+.theme-laundry .brand-logo-wrap {
+    background: linear-gradient(135deg, #5B21B6, #8B5CF6);
 }
 
 .theme-laundry .card {
-    border-color: #ede9fe;
+    border-color: #EDE9FE;
 }
 
 .theme-laundry .card:hover {
-    box-shadow: 0 22px 45px -25px rgba(124, 58, 237, .5);
+    box-shadow: 0 22px 45px -25px rgba(109, 40, 217, .45);
+    border-color: #8B5CF6;
 }
 
-.theme-laundry .btn-primary {
-    background: linear-gradient(135deg, #7c3aed, #a78bfa);
+.theme-laundry .btn-primary,
+.theme-laundry .nav-link.is-active,
+.theme-laundry .lang-switch a.is-active {
+    background: linear-gradient(135deg, #5B21B6, #7C3AED);
 }
 
 .theme-laundry .info-box {
-    border-left-color: #a78bfa;
-    background: linear-gradient(180deg, #ffffff, #f5f3ff);
+    border-left-color: #6D28D9;
+    background: #F5F3FF;
 }
 
 .theme-laundry .filter-pill.is-active {
-    background: #7c3aed;
-    border-color: #7c3aed;
+    background: #6D28D9;
+    border-color: #6D28D9;
+    color: #ffffff;
 }

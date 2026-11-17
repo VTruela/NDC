@@ -1,8 +1,8 @@
 @php($category = $product->category)
-<article class="card reveal">
+<article class="card tilt-card reveal theme-card-{{ $category->theme ?? 'default' }}">
     <a class="card-media" href="{{ route('products.show', [$category, $product->slug]) }}">
         @if ($product->is_featured)
-            <span class="badge badge-featured media-tag">{{ __('ui.products.featured') }}</span>
+            <span class="badge badge-featured media-tag">✦ {{ __('ui.products.featured') }}</span>
         @endif
         <img src="{{ $product->image_url }}" alt="{{ $product->name }}" loading="lazy">
     </a>

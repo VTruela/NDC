@@ -2,7 +2,7 @@
 
 @section('title', __('ui.admin.dashboard'))
 @section('heading', __('ui.admin.dashboard'))
-@section('crumb', __('ui.admin.welcome') . ', ' . auth()->user()->name)
+@section('crumb', __('ui.admin.welcome'))
 
 @section('content')
     <div class="stat-grid">

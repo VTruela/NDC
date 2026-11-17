@@ -1,52 +1,87 @@
 /* ==========================================================================
-   Category theme: Metal Finishing (Steel Gray / Steel Blue / Silver)
-   Industrial, metallic vibe
+   Category theme: Metal Finishing (Dominant Slate / Industrial Steel)
+   Dominant solid background hero with bright white typography
    ========================================================================== */
 
 .theme-metal {
-    --primary: #374151;
-    --primary-dark: #1f2937;
-    --primary-light: #4b5563;
-    --secondary: #1E3A5F;
-    --accent: #94A3B8;
+    --primary: #334155;
+    --primary-dark: #0F172A;
+    --primary-light: #475569;
+    --secondary: #0EA5E9;
+    --accent: #38BDF8;
 }
 
 .theme-metal .page-hero {
     background:
-        linear-gradient(120deg, rgba(148, 163, 184, .22), transparent 55%),
-        linear-gradient(160deg, #f1f5f9, #e2e8f0);
-    border-bottom-color: #cbd5e1;
+        radial-gradient(600px 300px at 88% 15%, rgba(56, 189, 248, .22), transparent 65%),
+        linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #334155 100%);
+    color: #ffffff;
+    border-bottom: none;
+}
+
+.theme-metal .page-hero h1 {
+    color: #ffffff;
+}
+
+.theme-metal .page-hero .lead {
+    color: rgba(255, 255, 255, .92);
+}
+
+.theme-metal .page-hero .breadcrumb,
+.theme-metal .page-hero .breadcrumb a {
+    color: #ffffff;
+}
+
+.theme-metal .page-hero .breadcrumb span.sep {
+    color: rgba(255, 255, 255, .6);
+}
+
+.theme-metal .page-hero .kicker,
+.theme-metal .page-hero .badge-soft {
+    background: rgba(255, 255, 255, .16);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, .32);
+}
+
+.theme-metal .page-hero .kicker::before {
+    background: #38BDF8;
 }
 
 .theme-metal .hero-badge,
-.theme-metal .badge-soft {
-    background: rgba(55, 65, 81, .1);
+.theme-metal .card-body .badge-soft,
+.theme-metal .price-note .badge-soft {
+    background: rgba(51, 65, 85, .1);
     color: var(--primary);
 }
 
 .theme-metal .feature-icon,
-.theme-metal .brand-mark {
-    background: linear-gradient(135deg, #374151, #94a3b8);
+.theme-metal .brand-mark,
+.theme-metal .brand-logo-wrap {
+    background: linear-gradient(135deg, #1E293B, #475569);
 }
 
 .theme-metal .card {
-    border-color: #d7dee7;
+    border-color: #CBD5E1;
 }
 
 .theme-metal .card:hover {
-    box-shadow: 0 22px 45px -25px rgba(55, 65, 81, .55);
+    box-shadow: 0 22px 45px -25px rgba(15, 23, 42, .45);
+    border-color: #475569;
 }
 
-.theme-metal .btn-primary {
-    background: linear-gradient(135deg, #374151, #64748b);
+.theme-metal .btn-primary,
+.theme-metal .nav-link.is-active,
+.theme-metal .lang-switch a.is-active {
+    background: linear-gradient(135deg, #1E293B, #475569);
 }
 
 .theme-metal .info-box {
-    border-left-color: #94a3b8;
-    background: linear-gradient(180deg, #ffffff, #f1f5f9);
+    border-left-color: #334155;
+    background: #F8FAFC;
 }
 
 .theme-metal .filter-pill.is-active {
-    background: #374151;
-    border-color: #374151;
+    background: #1E293B;
+    border-color: #1E293B;
+    color: #ffffff;
 }

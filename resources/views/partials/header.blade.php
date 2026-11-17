@@ -1,10 +1,15 @@
 <header class="site-header" id="siteHeader">
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
     <div class="container header-inner">
         <a class="brand" href="{{ route('home') }}">
             @if (config('company.logo') && file_exists(public_path(config('company.logo'))))
-                <img src="{{ asset(config('company.logo')) }}" alt="{{ __('ui.brand.name') }}" style="width:42px;height:42px;border-radius:12px;object-fit:contain;background:#fff">
+                <span class="brand-logo-wrap">
+                    <img src="{{ asset(config('company.logo')) }}" alt="{{ __('ui.brand.name') }}">
+                </span>
             @elseif (trim(__('ui.brand.mark')) !== '')
-                <img src="{{ \App\Support\Media::logoUrl() }}" alt="{{ __('ui.brand.name') }}" style="width:42px;height:42px;border-radius:12px;object-fit:contain">
+                <span class="brand-logo-wrap">
+                    <img src="{{ \App\Support\Media::logoUrl() }}" alt="{{ __('ui.brand.name') }}">
+                </span>
             @else
                 <span class="brand-mark">{{ __('ui.brand.mark') }}</span>
             @endif
@@ -24,17 +29,6 @@
 
             <div class="nav-mobile-actions">
                 <a class="btn btn-primary btn-block" href="{{ route('contact.index') }}">{{ __('ui.home.hero_cta') }}</a>
-                @auth
-                    @if (auth()->user()->isAdmin())
-                        <a class="btn btn-ghost btn-block" href="{{ route('admin.dashboard') }}">{{ __('ui.nav.admin') }}</a>
-                    @endif
-                    <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-                        <button class="btn btn-ghost btn-block" type="submit">{{ __('ui.admin.logout') }}</button>
-                    </form>
-                @else
-                    <a class="btn btn-ghost btn-block" href="{{ route('login') }}">{{ __('ui.auth.login') }}</a>
-                @endauth
             </div>
         </nav>
 
@@ -43,20 +37,10 @@
                 <a class="{{ app()->getLocale() === 'id' ? 'is-active' : '' }}" href="{{ route('lang.switch', 'id') }}">ID</a>
                 <a class="{{ app()->getLocale() === 'en' ? 'is-active' : '' }}" href="{{ route('lang.switch', 'en') }}">EN</a>
             </div>
-            @auth
-                @if (auth()->user()->isAdmin())
-                    <a class="nav-link header-login" href="{{ route('admin.dashboard') }}">{{ __('ui.nav.admin') }}</a>
-                @endif
-                <form method="POST" action="{{ route('logout') }}" style="display:inline">
-                    @csrf
-                    <button class="nav-link header-login" type="submit" style="background:none;border:none;cursor:pointer;font:inherit;padding:0">
-                        {{ __('ui.admin.logout') }}
-                    </button>
-                </form>
-            @else
-                <a class="nav-link header-login" href="{{ route('login') }}">{{ __('ui.auth.login') }}</a>
-            @endauth
-            <a class="btn btn-primary btn-sm header-cta" href="{{ route('contact.index') }}">{{ __('ui.home.hero_cta') }}</a>
+            <a class="btn btn-primary btn-sm header-cta magnetic-btn" href="{{ route('contact.index') }}">
+                <span>{{ __('ui.home.hero_cta') }}</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
             <button class="nav-toggle" id="navToggle" type="button" aria-label="{{ __('ui.nav.menu') }}" aria-expanded="false" aria-controls="mainNav">
                 <span></span><span></span><span></span>
             </button>
